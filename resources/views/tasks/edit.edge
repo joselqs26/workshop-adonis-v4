@@ -1,0 +1,16 @@
+@layout('main')
+	@section('content')
+		<h1>Actualizar Tarea</h1>
+		<form action="/tasks/{{task.id}}?_method=PUT" method="post">
+            {{ csrfField() }}
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" class="form-control" value="{{task.title}}">
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <input type="text" name="body" class="form-control" value="{{task.body}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+	@endsection

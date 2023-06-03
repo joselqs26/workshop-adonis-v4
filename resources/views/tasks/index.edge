@@ -1,0 +1,13 @@
+@layout('main')
+	@section('content')
+		<h1>Tareas</h1>
+		<ul class="list-group">
+			@each(task in tasks)
+			<li class="list-group-item">
+				<a href="/tasks/{{task.id}}">
+					{{task.title}}
+				</a>
+			</li>
+			@endeach
+		</ul>
+	@endsection

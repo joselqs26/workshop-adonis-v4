@@ -1,0 +1,11 @@
+@layout('main')
+	@section('content')
+		<h1>{{task.title}}</h1>
+		<p>{{task.body}}</p>
+        <hr>
+        <a href="/tasks/edit/{{task.id}}" class="btn btn-dark" >Actualizar tarea</a>
+        <form action="/tasks/{{task.id}}?_method=DELETE" method="post">
+            {{ csrfField() }}
+            <button type="submit" class="btn btn-danger" >Eliminar</button>
+        </form>
+	@endsection

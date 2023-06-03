@@ -1,0 +1,16 @@
+@layout('main')
+	@section('content')
+		<h1>Nueva Tarea</h1>
+		<form action="/tasks" method="post">
+            {{ csrfField() }}
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="body">Body</label>
+                <input type="text" name="body" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+	@endsection
